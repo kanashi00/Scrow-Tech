@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 690px;
+}
+
+
+header{
+    position: absolute;
+    color: #23F5E0;
+    background-color: rgb(0, 74, 105);
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    min-width: 690px;
+    
+}
+
+a{
+    display: inline-block;
+    color: #23F5E0;
+    text-decoration: none;
+}
+
+img.logo-name{
+    position: absolute;
+    width: auto;
+    height: 20px;
+    left: 30px;
+    top: 8px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+p.logo-desc{
+    position: absolute;
+    font-size: 12pt;
+    left: 105px;
+    top: 12px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: flex;
+    align-items: center;
+}
+header div{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 23px;
+    width: 242px;
+    right: 0px;
+    top: 15px;
+}
+
+/*titulo e logo*/ 
+section#titu{
+    position: absolute;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 690px;
+}
+
+section img.logo{
+    margin-top: 20px;
+    width: auto;
+    height: 120px;
+}
+section h1{
+    position: relative;
+    margin-top: 30px;
+    padding: 0px;
+    max-width: 600px;
+    height: auto;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    color: #004A69;
+}
+
+/*main*/
+div{
+    position: relative;
+    top: 330px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+div h2{
+    margin-bottom: 5px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(0, 74, 105);
+}
+
+div form{
+    
+    max-width: 550px;
+    border-radius: 30px;
+    background: #0CDDC8;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+form label{
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 30;
+    margin-Left: 20px;
+    margin-right: 5px;
+    width: 160px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    text-align: center;
+}
+
+form .box{
+    position: relative;
+    margin-top: 21px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    width: 250px;
+    height: 40px;
+    background: #c7c6c6;
+    border-radius: 15px;
+    text-align: center;
+}
+
+form .end-text{
+    position: relative;
+    margin-top: 21px;
+    margin-right: 10px;
+    width: 55px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    text-align: start;
+}
+
+form select{
+    position: relative;
+    margin-top: 21px;
+    margin-bottom: 20px;
+    margin-right: 90px;
+    width: 250px;
+    height: 40px;
+    background: #c7c6c6;
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 10pt;
+    text-align: center;
+
+}
+
+div form button {
+    position: relative;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16pt;
+    width: 100px;
+    height: 31px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: black
+}
+
+
