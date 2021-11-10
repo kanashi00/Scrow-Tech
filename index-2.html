@@ -7,76 +7,79 @@
     <meta name="author" content="Ana Rodrigues - @ana.paulahah">
     <meta name="description" content="Embalagens de Papelão - Auxilio no desenvolvimento e os limites fisico das caixas">
     <meta name="keywords" content="calculadora,desenvolvimento,dimensionamento,embalagens,empilhamento,resistencia,compressao,caixas,papelao">
-    <link rel="stylesheet" href="stylesheet_resp.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="icon" type="image/ico" href="IMG/logo-icon.ico">
-    <title>Cálculo de empilhamento - Scrow Tech</title>
+    <title>Cálculo de Resistência - Scrow Tech</title>
 </head>
-    <body>
-        <header id="cabeca">
-            <a href="index.html" class="blue">
-                <img src="IMG/logo-name.png" alt="Logo Scrow - Empresa de Tecnologia" class="logo-name"><p class="logo-desc">&#9679; Empresa de tecnologia</p>
-            </a>
-            <div>
-                <a href="prov.html" class="blue">Sobre</a>
-                <a href="prov.html" class="blue">Teoria</a>
-                <a href="prov.html" class="blue">Contato</a>
+<body>
+    <header id="cabeca">
+        <a href="index.html">
+            <img src="IMG/logo-name.png" alt="Logo Scrow - Empresa de Tecnologia" class="logo-name"><p class="logo-desc">&#9679; Empresa de tecnologia</p>
+        </a>
+        <div>
+            <a href="prov.html">Sobre</a>
+            <a href="prov.html">Teoria</a>
+            <a href="prov.html">Contato</a>
 
+        </div>
+    </header>
+        <section id="titu">
+            <img src="./IMG/logo-me.png" alt="Logo Scrow" class="logo">
+            <h1>Cálculo da Resistência a Compressão Mínima para Embalagens de Papelão</h1>
+        </section>
+        <div>
+        <h2>Dados:</h2>
+        <form method="get" action="calculo-2.php">
+
+            <label for="m" class="text">Peso da embalagem com os produtos</label>
+            <input type="number" name="m" class="box" step="any">   <p class="end-text">Kg</p>
+            
+            <label for="empi" class="text">Empilhamento máximo previsto</label>
+            <input type="number" name="empi" class="box" step="any">  <p class="end-text">Camadas</p>
+            
+            <label for="umi" class="text">Umidade relativa do ar</label>
+            <select name="umi" class="select">
+                <option value="1.00">50%</option>
+                <option value="0.87">65%</option>
+                <option value="0.78">75%</option>
+                <option value="0.7">80%</option>
+                <option value="0.52">90%</option>
+            </select>
+            
+            <label for="estq" class="text">Tempo de estocagem aproximado</label>
+            <select name="estq" class="select">
+                <option value="0.65">1 semana</option>
+                <option value="0.60">1 mês</option>
+                <option value="0.55">3 meses</option>
+                <option value="0.5">1 ano</option>
+            </select>
+            
+            <label for="manu" class="text">Tipo de manuseio</label>
+            <select name="manu" class="select">
+                <option value="0.8">Normal</option>
+                <option value="0.6">Severo</option>
+            </select>
+            
+            <label for="prod" class="text">Caracteristicas do produto na caixa</label>
+            <select name="prod" class="select">
+                <option value="1.3">Com sustentação/sem folga</option>
+                <option value="1">Sem sustentação/com folga</option>
+            </select>
+            
+            <label for="emp" class="text">Tipo de Empilhamento</label>
+            <select name="emp" class="select">
+                <option value="0.5">Caixas Entrelaçado/Cruzado</option>
+                <option value="0.95">Caixas sobrepostas/Colunar</option>
+            </select>
+            
+            <div class="botao">
+                <button>Calcular</button>
+                <button><a href="javascript:history.go(-1)">Voltar</a></button>
             </div>
-        </header>
-        <main>
-            <section id="titu">
-                <img src="./IMG/logo-me.png" alt="Logo Scrow" class="logo">
-                <h1>Cálculo do empilhamento máximo possivel para embalagens de papelão</h1>
-            </section>
-            <section class="box">
-            <div class="emp-resp">
-                <p class="txt">
-                    <?php 
-                    $emp = isset($_GET["rc"])?$_GET["rc"]:"Resultado do teste de compressão não foi especificado";
-                    /*$rc = str_replace(",",".",$_GET["rc"]);*/
-                    $m = isset($_GET["m"])?$_GET["m"]:"Resultado do teste de compressão não foi especificado";
-                    //$m = str_replace(",",".",$m);
-                    $umi = $_GET["umi"];
-                    $estq = $_GET["estq"];
-                    $manu = $_GET["manu"];
-                    $prod = $_GET["prod"];
-                    $emp = $_GET["emp"];
-
-                    //complementando minha respota - deixando bonitinha
-                    if ($prod==1.3) {
-                        $folga = "sem folga";
-                    }
-                    else {
-                        $folga = "com folga";
-                    }
-
-                    if ($emp==0.8) {
-                        $empi = "cruzado";
-                    }
-                    else {
-                        $empi = "colunar";
-                    }
-
-                    //logica-calculo
-                    $irc = $umi*$estq*$manu*$prod*$emp;
-                    $res=0;
-                    $n=0;
-
-                    while ($emp>=$res) {
-                        $res = ($n*$m)/$irc;
-                        $n++;
-                    }
-
-                    //vai sair na tela
-                    echo "Sua embalagem pode aguentar até <b>$n camadas</b> com empilhamento do tipo $empi e embalagens $folga interna";
-                    ?> 
-                    </p>
-                <button><a href="index.html">NOVO CALCULO</a></button>
-                <button><a href="javascript:history.go(-1)">VOLTAR</a></button>
-            </div>
-            </section>
-            <p id="texto-embaixo">Quer aprender um pouco melhor sobre o Cálculo? Vá até a aba <a href="teoria.html">Teoria</a> para sanar suas dúvidas</p>
-            <div id="anuncio">
+        </form> 
+        <p id="texto-embaixo">Com dúvidas sobre as definições?<br> Olha mais abaixo que temos uma explicação rápida pra você fazer seu cálculo ou clique <a href="#text-embaixo"><u>aqui</u></a></p>
+        </div>
+        <div id="anuncio">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4202708516404742"
                  crossorigin="anonymous"></script>
             <!-- anuncio-horizontal -->
@@ -90,8 +93,7 @@
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
-            <!-- teoria rapida -->
-            <section class="text-embaixo" id="teoria">
+        <section id="text-embaixo"> <!--teoria detalhes-->
             <h3><strong>Teoria Resumida:</strong></br></h3>
             <p>Existem vários fatores que podem prejudicar seus projetos, mas o mais comum é a caixa se deformar no empilhamento. Então para manter a segurança, a qualidade e custo, fazemos o dimensionamento e planejamento das embalagens e o quanto elas devem aguentar de peso.</p>
 
@@ -149,12 +151,9 @@
                     </script>
                 </div>
             </nav>
-            </section>
-        </main>
+        </section>
+
         
-    </body>
-</html>
-        </main>
-        
-    </body>
+    </main>
+</body>
 </html>

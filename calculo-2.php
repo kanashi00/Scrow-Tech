@@ -26,56 +26,35 @@
         <main>
             <section id="titu">
                 <img src="./IMG/logo-me.png" alt="Logo Scrow" class="logo">
-                <h1>Cálculo do empilhamento máximo possivel para embalagens de papelão</h1>
+                <h1>Cálculo de Resistência a Compressão de uma Embalagem de Papelão</h1>
             </section>
             <section class="box">
             <div class="emp-resp">
                 <p class="txt">
                     <?php 
-                    $emp = isset($_GET["rc"])?$_GET["rc"]:"Resultado do teste de compressão não foi especificado";
-                    /*$rc = str_replace(",",".",$_GET["rc"]);*/
-                    $m = isset($_GET["m"])?$_GET["m"]:"Resultado do teste de compressão não foi especificado";
-                    //$m = str_replace(",",".",$m);
+                    $n_emp = isset($_GET["empi"])?$_GET["empi"]:"Resultado do empilhamento máximo não foi especificado"; //no html, colocar restrição de que tem que ser respondido esse item e o de baixo
+                    $m = isset($_GET["m"])?$_GET["m"]:"Resultado do peso da caixa não foi especificado";
                     $umi = $_GET["umi"];
                     $estq = $_GET["estq"];
                     $manu = $_GET["manu"];
                     $prod = $_GET["prod"];
                     $emp = $_GET["emp"];
 
-                    //complementando minha respota - deixando bonitinha
-                    if ($prod==1.3) {
-                        $folga = "sem folga";
-                    }
-                    else {
-                        $folga = "com folga";
-                    }
-
-                    if ($emp==0.8) {
-                        $empi = "cruzado";
-                    }
-                    else {
-                        $empi = "colunar";
-                    }
-
-                    //logica-calculo
+                    //lógica
                     $irc = $umi*$estq*$manu*$prod*$emp;
-                    $res=0;
-                    $n=0;
-
-                    while ($emp>=$res) {
-                        $res = ($n*$m)/$irc;
-                        $n++;
-                    }
+                    $irc = number_format($irc,2,'.',''); //definindo as casas decimais
+                    $rc = ($m*($n_emp-1))/$irc;
+                    $rc = number_format($rc,0,'.',''); //definindo as casas decimais
 
                     //vai sair na tela
-                    echo "Sua embalagem pode aguentar até <b>$n camadas</b> com empilhamento do tipo $empi e embalagens $folga interna";
+                    echo "Sua embalagem deve ter aproximadamente uma resistência de <b>$rc Kgf</b> para aguentar até <b>$n_emp camadas</b> nas condições impostas";
                     ?> 
                     </p>
                 <button><a href="index.html">NOVO CALCULO</a></button>
                 <button><a href="javascript:history.go(-1)">VOLTAR</a></button>
             </div>
             </section>
-            <p id="texto-embaixo">Quer aprender um pouco melhor sobre o Cálculo? Vá até a aba <a href="teoria.html">Teoria</a> para sanar suas dúvidas</p>
+            <p id="texto-embaixo">Quer aprender um pouco melhor sobre o Cálculo?<br> Vá até a aba <a href="teoria.html">Teoria</a>, ou veja um resumo clicando <a href="#teoria"><u>aqui</u></a></p>
             <div id="anuncio">
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4202708516404742"
                  crossorigin="anonymous"></script>
@@ -150,10 +129,6 @@
                 </div>
             </nav>
             </section>
-        </main>
-        
-    </body>
-</html>
         </main>
         
     </body>
