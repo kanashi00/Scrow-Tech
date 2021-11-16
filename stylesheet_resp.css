@@ -125,9 +125,16 @@ p.txt{
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
+    width: 500px;
 }
 
-div button{
+a.link{
+    position: relative;
+
+    text-decoration: none;
+}
+
+div a button.bot{
     width: 150px;
     height: 31px;
     border-radius: 12px;
@@ -139,16 +146,12 @@ div button{
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-}
-
-div button a{
-    position: relative;
+    /*interno botão*/
+    color: white;
     font-family: PT Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 10pt;
-    text-decoration: none;
-    color: white;
 }
 
 p#texto-embaixo{

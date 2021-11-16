@@ -25,7 +25,7 @@ header{
     
 }
 
-a.abas{
+.abas{
     display: inline-block;
     color: #23F5E0;
     text-decoration: none;
@@ -35,7 +35,7 @@ a.abas{
     font-style: normal;
 }
 
-img.logo-name{
+.logo-name{
     position: absolute;
     width: auto;
     height: 20px;
@@ -46,7 +46,7 @@ img.logo-name{
     border: 0px;
 }
 
-p.logo-desc{
+.logo-desc{
     position: absolute;
     font-size: 12pt;
     left: 105px;
@@ -70,10 +70,10 @@ header div{
 }
 
 /*titulo e logo*/ 
-section#titu{
+#titu{
     position: absolute;
     width: 100%;
-    margin-top: 200px;
+    margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@ section#titu{
     min-width: 690px;
 }
 
-section img.logo{
+.logo{
     margin-top: 20px;
     width: auto;
     height: 120px;
@@ -103,7 +103,7 @@ section h1{
 /*botões*/
 div{
     position: relative;
-    top: 300px;
+    top: 200px;
     width: auto;
     height: auto;
     display: flex;

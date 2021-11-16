@@ -38,10 +38,10 @@
                     $estq = $_GET["estq"];
                     $manu = $_GET["manu"];
                     $prod = $_GET["prod"];
-                    $emp = $_GET["emp"];
+                    $empilha = $_GET["emp"];
 
                     //lógica
-                    $irc = $umi*$estq*$manu*$prod*$emp;
+                    $irc = $umi*$estq*$manu*$prod*$empilha;
                     $irc = number_format($irc,2,'.',''); //definindo as casas decimais
                     $rc = ($m*($n_emp-1))/$irc;
                     $rc = number_format($rc,0,'.',''); //definindo as casas decimais
@@ -50,8 +50,8 @@
                     echo "Sua embalagem deve ter aproximadamente uma resistência de <b>$rc Kgf</b> para aguentar até <b>$n_emp camadas</b> nas condições impostas";
                     ?> 
                     </p>
-                <button><a href="index.html">NOVO CALCULO</a></button>
-                <button><a href="javascript:history.go(-1)">VOLTAR</a></button>
+                <a href="index.html" class="link"><button class="bot">NOVO CALCULO</button></a>
+                <a href="javascript:history.go(-1)" class="link"><button class="bot">VOLTAR</button></a>
             </div>
             </section>
             <p id="texto-embaixo">Quer aprender um pouco melhor sobre o Cálculo?<br> Vá até a aba <a href="teoria.html">Teoria</a>, ou veja um resumo clicando <a href="#teoria"><u>aqui</u></a></p>
@@ -96,8 +96,8 @@
             <p>A imagem a segui detalha como é leado em consideração a contagem de camadas</p>
             <img src="IMG/CAMADAS.svg" alt="detalhe-camadas">
             <h4>Tipo de empilhamento</h4>
-            <img src="img/EMP-COLUNAR.svg" alt="empilhamento-colunar"><br>
-            <img src="img/EMP-CRUZADO.svg" alt="empilhamento-cruzado">
+            <img src="IMG/EMP-COLUNAR.svg" alt="empilhamento-colunar"><br>
+            <img src="IMG/EMP-CRUZADO.svg" alt="empilhamento-cruzado">
             <nav><!--anuncio-->
                 <div>
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4202708516404742"

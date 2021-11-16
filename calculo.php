@@ -32,7 +32,7 @@
             <div class="emp-resp">
                 <p class="txt">
                     <?php 
-                    $emp = isset($_GET["rc"])?$_GET["rc"]:"Resultado do teste de compressão não foi especificado";
+                    $res_rc = isset($_GET["rc"])?$_GET["rc"]:"Resultado do teste de compressão não foi especificado";
                     /*$rc = str_replace(",",".",$_GET["rc"]);*/
                     $m = isset($_GET["m"])?$_GET["m"]:"Resultado do teste de compressão não foi especificado";
                     //$m = str_replace(",",".",$m);
@@ -50,7 +50,7 @@
                         $folga = "com folga";
                     }
 
-                    if ($emp==0.8) {
+                    if ($empilha==0.8) {
                         $empi = "cruzado";
                     }
                     else {
@@ -59,20 +59,13 @@
 
                     //logica-calculo
                     $irc = $umi*$estq*$manu*$prod*$empilha;
-                    $res=0;
-                    $n=0;
-
-                    while ($emp>=$res) {
-                        $res = ($n*$m)/$irc;
-                        $n++;
-                    }
-
+                    $camadas = ($res_rc*$irc)/$m;
                     //vai sair na tela
-                    echo "Sua embalagem pode aguentar até <b>$n camadas</b> com empilhamento do tipo $empi e embalagens $folga interna";
+                    echo "Sua embalagem pode aguentar até <b> ".floor($camadas)/*aredondando para o menor valor*/." camadas</b> com empilhamento do tipo $empi e embalagens $folga interna";
                     ?> 
                     </p>
-                <button><a href="index.html">NOVO CALCULO</a></button>
-                <button><a href="javascript:history.go(-1)">VOLTAR</a></button>
+                <a href="index.html" class="link"><button class="bot">NOVO CALCULO</button></a>
+                <a href="javascript:history.go(-1)" class="link"><button class="bot">VOLTAR</button></a>
             </div>
             </section>
             <p id="texto-embaixo">Quer aprender um pouco melhor sobre o Cálculo? Vá até a aba <a href="teoria.html">Teoria</a> para sanar suas dúvidas</p>
