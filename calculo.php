@@ -40,7 +40,7 @@
                     $estq = $_GET["estq"];
                     $manu = $_GET["manu"];
                     $prod = $_GET["prod"];
-                    $emp = $_GET["emp"];
+                    $empilha = $_GET["emp"];
 
                     //complementando minha respota - deixando bonitinha
                     if ($prod==1.3) {
@@ -58,7 +58,7 @@
                     }
 
                     //logica-calculo
-                    $irc = $umi*$estq*$manu*$prod*$emp;
+                    $irc = $umi*$estq*$manu*$prod*$empilha;
                     $res=0;
                     $n=0;
 
@@ -117,8 +117,8 @@
             <p>A imagem a segui detalha como é leado em consideração a contagem de camadas</p>
             <img src="IMG/CAMADAS.svg" alt="detalhe-camadas">
             <h4>Tipo de empilhamento</h4>
-            <img src="img/EMP-COLUNAR.svg" alt="empilhamento-colunar"><br>
-            <img src="img/EMP-CRUZADO.svg" alt="empilhamento-cruzado">
+            <img src="IMG/EMP-COLUNAR.svg" alt="empilhamento-colunar"><br>
+            <img src="IMG/EMP-CRUZADO.svg" alt="empilhamento-cruzado">
             <nav><!--anuncio-->
                 <div>
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4202708516404742"
